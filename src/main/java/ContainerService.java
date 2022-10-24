@@ -1,5 +1,3 @@
-package me.manylove.mydi;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
@@ -24,7 +22,7 @@ public class ContainerService {
 
     private static <T> T createInstance(Class<T> classType){
         try {
-            return classType.getConstructor(null).newInstance();
+            return classType.getConstructor().newInstance();
         } catch (InstantiationException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
